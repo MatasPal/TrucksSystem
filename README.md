@@ -35,7 +35,7 @@ The subunit assignment requires the following fields:
 
 ## Technical Requirements
 
-- The project is built using the latest version of **Laravel**..
+- The project is built using the latest version of **Laravel**.
 - It includes migrations, models, controllers, and views for managing both trucks and subunits.
 - Bootstrap 5 is used for front-end styling, with added animations and hover effects to enhance user experience.
 - Validation is implemented to ensure data integrity and avoid conflicts.
