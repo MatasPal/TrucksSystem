@@ -1,6 +1,6 @@
 # Truck Management System
 
-This is a Laravel-based application to manage trucks and their subunits. The project includes CRUD functionality for trucks, as well as the ability to assign subunits to trucks. Subunits are defined as temporary replacements for trucks that are unavailable
+This is a Laravel-based application to manage trucks and their subunits. The project includes CRUD functionality for trucks, as well as the ability to assign subunits to trucks. Subunits are defined as temporary replacements for trucks that are unavailable.
 
 ## Features
 
