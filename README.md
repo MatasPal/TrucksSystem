@@ -50,20 +50,24 @@ The subunit assignment requires the following fields:
 
 2. **Navigate to the project directory:**
 
+   ```bash
    cd trucks-project
    
 3. **Install dependencies:**
 
+   ```bash
    composer install
 
 4. **Create a .env file:**
 
    To create the .env file, you can copy .env.example:
+   ```bash
    cp .env.example .env
 
 5. **Configure the database:**
 
    Open the .env file and set the following parameters:
+   ```bash
    DB_CONNECTION=pgsql
    DB_HOST=localhost
    DB_PORT=5432
@@ -73,16 +77,19 @@ The subunit assignment requires the following fields:
 
 6. **Create database:**
    Create it manually, or by running this command in terminal:
-   ```createdb -U postgre dbtrucks 
+   ```bash
+   createdb -U postgre dbtrucks 
 
 7. **Run the database migrations:**
 
    Execute the following command to create the necessary tables(in terminal):
+   ```bash
    php artisan migrate
 
 8. **Run the program:**
 
    Type this command in terminal:
-   ```php artisan serve 
+   ```bash
+   php artisan serve 
    
 
