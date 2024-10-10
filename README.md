@@ -39,3 +39,50 @@ The subunit assignment requires the following fields:
 - It includes migrations, models, controllers, and views for managing both trucks and subunits.
 - Bootstrap 5 is used for front-end styling, with added animations and hover effects to enhance user experience.
 - Validation is implemented to ensure data integrity and avoid conflicts.
+
+
+## Running the Project
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/MatasPal/TrucksSystem.git
+
+2. **Navigate to the project directory:**
+
+   cd trucks-project
+   
+3. **Install dependencies:**
+
+   composer install
+
+4. **Create a .env file:**
+
+   To create the .env file, you can copy .env.example:
+   cp .env.example .env
+
+5. **Configure the database:**
+
+   Open the .env file and set the following parameters:
+   DB_CONNECTION=pgsql
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_DATABASE=dbtrucks
+   DB_USERNAME=your_database_user
+   DB_PASSWORD=your_database_password
+
+6. **Create database:**
+   Create it manually, or by running this command in terminal:
+   ```createdb -U postgre dbtrucks 
+
+7. **Run the database migrations:**
+
+   Execute the following command to create the necessary tables(in terminal):
+   php artisan migrate
+
+8. **Run the program:**
+
+   Type this command in terminal:
+   ```php artisan serve 
+   
+
