@@ -90,6 +90,4 @@ The subunit assignment requires the following fields:
 
    Type this command in terminal:
    ```bash
-   php artisan serve 
-   
-
+   php artisan serve
