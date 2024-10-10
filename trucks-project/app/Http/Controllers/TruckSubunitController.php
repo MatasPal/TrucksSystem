@@ -56,6 +56,18 @@ class TruckSubunitController extends Controller
             return back()->withErrors('The subunit is already assigned during the specified dates.');
         }
 
+        // Check if the main truck is already a subunit of another truck during the specified dates
+        $mainTruckIsAlreadySubunit = TruckSubunit::where('subunit', $request->main_truck)
+            ->where(function ($query) use ($request) {
+                $query->where('start_date', '<=', $request->end_date)
+                    ->where('end_date', '>=', $request->start_date);
+            })
+            ->exists();
+
+        if ($mainTruckIsAlreadySubunit) {
+            return back()->withErrors('The main truck is already a subunit for another truck during the specified dates and cannot have its own subunit.');
+        }
+
         TruckSubunit::create($request->all());
         return redirect()->route('subunits.index')->with('success', 'Subunit added successfully.');
     }
@@ -101,8 +113,22 @@ class TruckSubunitController extends Controller
                     ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
             })->exists();
 
+
+
         if ($subunitOverlapping) {
             return back()->withErrors('The subunit is already assigned during the specified dates.');
+        }
+
+        // Check if the main truck is already a subunit of another truck during the specified dates
+        $mainTruckIsAlreadySubunit = TruckSubunit::where('subunit', $request->main_truck)
+            ->where(function ($query) use ($request) {
+                $query->where('start_date', '<=', $request->end_date)
+                    ->where('end_date', '>=', $request->start_date);
+            })
+            ->exists();
+
+        if ($mainTruckIsAlreadySubunit) {
+            return back()->withErrors('The main truck is already a subunit for another truck during the specified dates and cannot have its own subunit.');
         }
 
         $subunit->update($request->all());
